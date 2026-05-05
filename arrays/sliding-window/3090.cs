@@ -6,14 +6,14 @@ public class Solution {
         int pl = 0;
         int pr = 0;
         int _max = 1;
-        var map = new Dictionary<int, string>();
+        var map = new Dictionary<char, int>();
 
         map[s[0]] = 1;
 
-        while (pr < (s.Length()-1))
+        while (pr < (s.Length-1))
         {
             pr++;
-            if(map[s[pr]])
+            if(map.ContainsKey(s[pr]))
             {
                 map[s[pr]] += 1;
             }
@@ -24,7 +24,7 @@ public class Solution {
 
             while (map[s[pr]] == 3)
             {
-                map[s[pl]] = -1;
+                map[s[pl]]--;
                 pl++;
             }
             
