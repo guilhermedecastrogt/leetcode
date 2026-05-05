@@ -4,7 +4,6 @@ function maximumLengthSubstring(s: string): number {
     let max = 1;
     let charCount = new Map<string, number>();
     charCount.set(s[0], 1);
-
     while (pR < s.length - 1) {
         pR++;
 

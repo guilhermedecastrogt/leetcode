@@ -5,24 +5,22 @@ public class Solution {
         var map = new Dictionary<char, int>();
 
         for(int i = 0; i < s.Length; i++){
-            if(map.ContainsKey(s[i]!))
-            {
-                map[s[i]] = 1;
-            }
-            else
+            if(map.ContainsKey(s[i]))
             {
                 map[s[i]]++;
             }
+            else
+            {
+                map[s[i]] = 1;
+            }
         }
 
-        int i = 0;
-        foreach(var ch in map)
+        for(int i = 0; i < s.Length; i++)
         {
-            if(map[i] == 1)
+            if(map[s[i]] == 1)
             {
                 return i;
             }
-            i++;
         }
         return -1;
     }

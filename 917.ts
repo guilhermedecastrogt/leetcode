@@ -4,12 +4,12 @@ function reverseOnlyLetters(s: string): string {
     let r = arr.length-1;
 
     while (l < r) {
-        if(!isLetter(arr[l]) && !isLetter(arr[r])) {
+        if(isLetter(arr[l]) && isLetter(arr[r])) {
             [arr[l], arr[r]] = [arr[r], arr[l]]
             l++
             r--
         }
-        else if (!isLetter(arr[l])) {
+        else if (isLetter(arr[l])) {
             r--;
         }
         else if (isLetter(arr[r])) {
