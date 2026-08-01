@@ -6,9 +6,6 @@ class Solution:
         while p < len(nums):
             x = target - nums[p]
             if x in map:
-                r.append(map[x])
-                r.append(nums[p])
-                return r;
+                return [map[x], p];
             map[nums[p]] = p;
             p += 1
-                
