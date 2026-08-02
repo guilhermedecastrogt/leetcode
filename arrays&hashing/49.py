@@ -23,3 +23,6 @@ class Solution:
             pM += 1
 
         return list(hash.values())
+
+
+    # O(n . m log m) using sorted
