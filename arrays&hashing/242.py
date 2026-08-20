@@ -19,3 +19,5 @@ class Solution:
 
         if freq1 == freq2: return True
         else: return False
+
+## return (freq1 == freq2)
