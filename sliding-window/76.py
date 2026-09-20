@@ -1,18 +1,13 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if t == "": return ""
-
         l, r = 0, 0
         window, co = {}, {}
-
-        for c in t:
-            co[c] = 1 + co.get(c, 0)
-
+        for c in t: co[c] = 1 + co.get(c, 0)
         have, need = 0, len(co)
         res, resLen = [-1, -1], float('inf')
 
         while r < len(s):
-
             window[s[r]] = 1 + window.get(s[r], 0)
 
             if s[r] in co and window[s[r]] == co[s[r]]:
@@ -27,8 +22,8 @@ class Solution:
                 if s[l] in co and window[s[l]] < co[s[l]]:
                     have-=1
                 l+=1
-
             r+=1
-        
         l, r = res
         return s[l:r+1] if resLen != float('inf') else ""
+
+#O(?) // ?
