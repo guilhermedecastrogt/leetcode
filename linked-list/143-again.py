@@ -1,0 +1,35 @@
+class Solution:
+    def reorderList(self, head: ListNode | None) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
+        slow = head
+        fast = head.next
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        l1 = head
+        l2 = slow.next
+        slow.next = None
+
+        anterior = None
+
+
+        while l2:
+            proximo = l2.next
+            l2.next = anterior
+            anterior = l2
+            l2 = proximo
+
+
+        while anterior:
+            proximo = l1.next
+            p2 = anterior.next
+
+            anterior.next = l1.next
+            l1.next = anterior
+
+            l1 = proximo
+            anterior = p2
